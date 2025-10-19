@@ -1175,23 +1175,31 @@ function updateMemoryIndicator() {
 // Affichage
 function updateDisplay() {
     try {
-        currentOperandElement.textContent = formatNumber(currentOperand);
+        if (currentOperandElement) {
+            currentOperandElement.textContent = formatNumber(currentOperand);
+        }
     } catch (error) {
         console.error('Erreur updateDisplay:', error);
-        currentOperandElement.textContent = 'Erreur';
+        if (currentOperandElement) {
+            currentOperandElement.textContent = 'Erreur';
+        }
     }
 }
 
 function updateFormulaPreview() {
     try {
-        if (operation !== null && previousOperand !== '') {
-            formulaPreviewElement.textContent = `${formatNumber(previousOperand)} ${operation}`;
-        } else {
-            formulaPreviewElement.textContent = '';
+        if (formulaPreviewElement) {
+            if (operation !== null && previousOperand !== '') {
+                formulaPreviewElement.textContent = `${formatNumber(previousOperand)} ${operation}`;
+            } else {
+                formulaPreviewElement.textContent = '';
+            }
         }
     } catch (error) {
         console.error('Erreur updateFormulaPreview:', error);
-        formulaPreviewElement.textContent = '';
+        if (formulaPreviewElement) {
+            formulaPreviewElement.textContent = '';
+        }
     }
 }
 
@@ -1474,7 +1482,9 @@ function scientificConstant(constant) {
 
 function toggleAngleUnit() {
     angleUnit = angleUnit === 'DEG' ? 'RAD' : 'DEG';
-    angleUnitBtn.textContent = angleUnit;
+    if (angleUnitBtn) {
+        angleUnitBtn.textContent = angleUnit;
+    }
     showNotification(`Unité d'angle: ${angleUnit}`, 'info');
 }
 
@@ -1496,23 +1506,31 @@ function factorial(n) {
 
 function scientificUpdateDisplay() {
     try {
-        scientificCurrentOperandElement.textContent = formatNumber(scientificCurrentOperand);
+        if (scientificCurrentOperandElement) {
+            scientificCurrentOperandElement.textContent = formatNumber(scientificCurrentOperand);
+        }
     } catch (error) {
         console.error('Erreur scientificUpdateDisplay:', error);
-        scientificCurrentOperandElement.textContent = 'Erreur';
+        if (scientificCurrentOperandElement) {
+            scientificCurrentOperandElement.textContent = 'Erreur';
+        }
     }
 }
 
 function scientificUpdateFormulaPreview() {
     try {
-        if (scientificOperation !== null && scientificPreviousOperand !== '') {
-            scientificFormulaPreviewElement.textContent = `${formatNumber(scientificPreviousOperand)} ${scientificOperation}`;
-        } else {
-            scientificFormulaPreviewElement.textContent = '';
+        if (scientificFormulaPreviewElement) {
+            if (scientificOperation !== null && scientificPreviousOperand !== '') {
+                scientificFormulaPreviewElement.textContent = `${formatNumber(scientificPreviousOperand)} ${scientificOperation}`;
+            } else {
+                scientificFormulaPreviewElement.textContent = '';
+            }
         }
     } catch (error) {
         console.error('Erreur scientificUpdateFormulaPreview:', error);
-        scientificFormulaPreviewElement.textContent = '';
+        if (scientificFormulaPreviewElement) {
+            scientificFormulaPreviewElement.textContent = '';
+        }
     }
 }
 
@@ -1811,32 +1829,36 @@ function updateBaseValues() {
     try {
         const value = parseInt(programmerCurrentOperand, getBaseValue(currentBase));
         if (isNaN(value)) {
-            hexValueElement.textContent = '0';
-            decValueElement.textContent = '0';
-            octValueElement.textContent = '0';
-            binValueElement.textContent = '0';
+            if (hexValueElement) hexValueElement.textContent = '0';
+            if (decValueElement) decValueElement.textContent = '0';
+            if (octValueElement) octValueElement.textContent = '0';
+            if (binValueElement) binValueElement.textContent = '0';
             return;
         }
         
-        hexValueElement.textContent = value.toString(16).toUpperCase();
-        decValueElement.textContent = value.toString(10);
-        octValueElement.textContent = value.toString(8);
-        binValueElement.textContent = value.toString(2);
+        if (hexValueElement) hexValueElement.textContent = value.toString(16).toUpperCase();
+        if (decValueElement) decValueElement.textContent = value.toString(10);
+        if (octValueElement) octValueElement.textContent = value.toString(8);
+        if (binValueElement) binValueElement.textContent = value.toString(2);
     } catch (error) {
         console.error('Erreur updateBaseValues:', error);
-        hexValueElement.textContent = 'Erreur';
-        decValueElement.textContent = 'Erreur';
-        octValueElement.textContent = 'Erreur';
-        binValueElement.textContent = 'Erreur';
+        if (hexValueElement) hexValueElement.textContent = 'Erreur';
+        if (decValueElement) decValueElement.textContent = 'Erreur';
+        if (octValueElement) octValueElement.textContent = 'Erreur';
+        if (binValueElement) binValueElement.textContent = 'Erreur';
     }
 }
 
 function programmerUpdateDisplay() {
     try {
-        programmerCurrentOperandElement.textContent = programmerCurrentOperand;
+        if (programmerCurrentOperandElement) {
+            programmerCurrentOperandElement.textContent = programmerCurrentOperand;
+        }
     } catch (error) {
         console.error('Erreur programmerUpdateDisplay:', error);
-        programmerCurrentOperandElement.textContent = 'Erreur';
+        if (programmerCurrentOperandElement) {
+            programmerCurrentOperandElement.textContent = 'Erreur';
+        }
     }
 }
 
@@ -1970,17 +1992,17 @@ function financeFunction(func) {
         switch(func) {
             case 'PV':
                 financeValues.PV = value;
-                pvValueElement.textContent = formatNumber(value);
+                if (pvValueElement) pvValueElement.textContent = formatNumber(value);
                 showNotification('Valeur présente définie', 'success');
                 break;
             case 'FV':
                 financeValues.FV = value;
-                fvValueElement.textContent = formatNumber(value);
+                if (fvValueElement) fvValueElement.textContent = formatNumber(value);
                 showNotification('Valeur future définie', 'success');
                 break;
             case 'PMT':
                 financeValues.PMT = value;
-                pmtValueElement.textContent = formatNumber(value);
+                if (pmtValueElement) pmtValueElement.textContent = formatNumber(value);
                 showNotification('Paiement défini', 'success');
                 break;
             case 'N':
@@ -2073,9 +2095,9 @@ function financeClearAll() {
     financeOperation = null;
     financeShouldResetScreen = false;
     financeValues = { PV: 0, FV: 0, PMT: 0, N: 0, IY: 0 };
-    pvValueElement.textContent = '0';
-    fvValueElement.textContent = '0';
-    pmtValueElement.textContent = '0';
+    if (pvValueElement) pvValueElement.textContent = '0';
+    if (fvValueElement) fvValueElement.textContent = '0';
+    if (pmtValueElement) pmtValueElement.textContent = '0';
     financeUpdateDisplay();
     showNotification('Calculatrice financière réinitialisée', 'info');
 }
@@ -2127,10 +2149,14 @@ function financeToggleSign() {
 
 function financeUpdateDisplay() {
     try {
-        financeCurrentOperandElement.textContent = formatNumber(financeCurrentOperand);
+        if (financeCurrentOperandElement) {
+            financeCurrentOperandElement.textContent = formatNumber(financeCurrentOperand);
+        }
     } catch (error) {
         console.error('Erreur financeUpdateDisplay:', error);
-        financeCurrentOperandElement.textContent = 'Erreur';
+        if (financeCurrentOperandElement) {
+            financeCurrentOperandElement.textContent = 'Erreur';
+        }
     }
 }
 
@@ -2345,27 +2371,49 @@ function printCalculation() {
 }
 
 // =============================================
-// ANIMATIONS ET STYLES DYNAMIQUES
+// INITIALISATION FINALE
 // =============================================
 
-// Ajouter l'animation slideIn pour les notifications
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from { 
-            opacity: 0; 
-            transform: translateX(100%); 
-        }
-        to { 
-            opacity: 1; 
-            transform: translateX(0); 
-        }
-    }
+// Réinitialiser toutes les calculatrices au chargement
+function resetAllCalculators() {
+    // Calculatrice classique
+    currentOperand = '0';
+    previousOperand = '';
+    operation = null;
+    shouldResetScreen = false;
     
-    .notification {
-        animation: slideIn 0.3s ease;
-    }
-`;
-document.head.appendChild(style);
+    // Calculatrice scientifique
+    scientificCurrentOperand = '0';
+    scientificPreviousOperand = '';
+    scientificOperation = null;
+    scientificShouldResetScreen = false;
+    angleUnit = 'DEG';
+    
+    // Calculatrice programmeur
+    programmerCurrentOperand = '0';
+    programmerPreviousOperand = '';
+    programmerOperation = null;
+    programmerShouldResetScreen = false;
+    currentBase = 'DEC';
+    
+    // Calculatrice financière
+    financeCurrentOperand = '0';
+    financePreviousOperand = '';
+    financeOperation = null;
+    financeShouldResetScreen = false;
+    
+    // Mettre à jour tous les affichages
+    updateDisplay();
+    scientificUpdateDisplay();
+    programmerUpdateDisplay();
+    financeUpdateDisplay();
+    updateBaseValues();
+}
+
+// Appeler l'initialisation finale
+setTimeout(() => {
+    resetAllCalculators();
+    console.log('✅ Toutes les calculatrices sont initialisées et prêtes pour mobile');
+}, 100);
 
 console.log('✅ JavaScript calculatrice chargé avec toutes les corrections');
