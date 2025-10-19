@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CalcPro | Calculatrice Universelle Professionnelle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-mobile-optimized="true" data-touch-enabled="true">
+    <div class="container" data-scroll-container="true">
+        <header>
+            <div class="logo">
+                <i class="fas fa-calculator" aria-hidden="true"></i>
+                <span>CalcPro</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-target="hero">Accueil</a></li>
+                    <li><a href="#" class="nav-link" data-target="features">Fonctionnalités</a></li>
+                    <li><a href="#" class="nav-link" data-target="mainContent">Calculatrices</a></li>
+                    <li><a href="#" class="nav-link">Outils</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu principal">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </header>
+
+        <section class="hero" id="hero">
+            <h1>Calculatrice All-in-One Professionnelle</h1>
+            <p>Une suite complète d'outils de calcul pour tous vos besoins : classique, scientifique, financière, programmeur et bien plus encore.</p>
+            <a href="#" class="cta-button" id="startCalc">Démarrer le calcul</a>
+        </section>
+
+        <!-- Section Fonctionnalités -->
+        <section class="features-section" id="features">
+            <h2 class="section-title"><i class="fas fa-star" aria-hidden="true"></i> Fonctionnalités Premium</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: var(--text-light); max-width: 800px; margin-left: auto; margin-right: auto;">
+                Découvrez toutes les fonctionnalités puissantes de CalcPro, conçues pour répondre à tous vos besoins en calcul et conversion.
+            </p>
+            
+            <div class="features-grid">
+                <!-- Calculatrices -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-calculator" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">Calculatrices</h3>
+                    </div>
+                    <p class="feature-description">
+                        Quatre modes de calcul spécialisés pour répondre à tous vos besoins, de l'arithmétique basique aux calculs financiers complexes.
+                    </p>
+                    
+                    <div class="feature-preview">
+                        <div class="mini-calculator">
+                            <div class="mini-display">123.45</div>
+                            <div class="mini-buttons">
+                                <button class="mini-btn" aria-label="Sept">7</button>
+                                <button class="mini-btn" aria-label="Huit">8</button>
+                                <button class="mini-btn" aria-label="Neuf">9</button>
+                                <button class="mini-btn" style="background: var(--primary);" aria-label="Addition">+</button>
+                                <button class="mini-btn" aria-label="Quatre">4</button>
+                                <button class="mini-btn" aria-label="Cinq">5</button>
+                                <button class="mini-btn" aria-label="Six">6</button>
+                                <button class="mini-btn" style="background: var(--primary);" aria-label="Soustraction">-</button>
+                                <button class="mini-btn" aria-label="Un">1</button>
+                                <button class="mini-btn" aria-label="Deux">2</button>
+                                <button class="mini-btn" aria-label="Trois">3</button>
+                                <button class="mini-btn" style="background: var(--primary);" aria-label="Multiplication">×</button>
+                                <button class="mini-btn" aria-label="Zéro">0</button>
+                                <button class="mini-btn" aria-label="Point décimal">.</button>
+                                <button class="mini-btn" style="background: var(--success);" aria-label="Égal">=</button>
+                                <button class="mini-btn" style="background: var(--primary);" aria-label="Division">÷</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Classique</strong> - Opérations arithmétiques de base</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Scientifique</strong> - Fonctions trigonométriques, logarithmes, puissances</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Programmeur</strong> - Conversions binaire, hexadécimal, opérations bit à bit</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Finance</strong> - Calculs de prêts, intérêts, amortissements</li>
+                    </ul>
+                    
+                    <div class="feature-actions">
+                        <button class="demo-btn" onclick="showCalculator()" aria-label="Essayer la calculatrice">Essayer</button>
+                        <button class="demo-btn secondary" aria-label="Voir la démonstration">Voir la démo</button>
+                    </div>
+                </div>
+                
+                <!-- Convertisseurs -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">Convertisseurs</h3>
+                    </div>
+                    <p class="feature-description">
+                        Conversion instantanée entre différentes unités de mesure et devises internationales avec des taux actualisés.
+                    </p>
+                    
+                    <div class="feature-preview">
+                        <div class="conversion-animation">
+                            <div class="conversion-box">
+                                <strong>100</strong><br>USD
+                            </div>
+                            <div class="conversion-arrow">
+                                <i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>
+                            </div>
+                            <div class="conversion-box">
+                                <strong>85.50</strong><br>EUR
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Unités</strong> - Distance, poids, volume, température, surface</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Devises</strong> - USD, EUR, GBP, JPY, CAD et 20+ autres</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Temps</strong> - Conversion entre fuseaux horaires et formats</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Données</strong> - Bits, octets, kilo/méga/giga-octets</li>
+                    </ul>
+                    
+                    <div class="feature-actions">
+                        <button class="demo-btn" onclick="showConverter()" aria-label="Essayer le convertisseur">Essayer</button>
+                        <button class="demo-btn secondary" aria-label="Voir la démonstration">Voir la démo</button>
+                    </div>
+                </div>
+                
+                <!-- Outils Développeur -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">Outils Développeur</h3>
+                    </div>
+                    <p class="feature-description">
+                        Une boîte à outils complète pour les développeurs, avec des fonctions de hachage, formatage et encodage.
+                    </p>
+                    
+                    <div class="feature-preview">
+                        <div style="text-align: left; width: 100%;">
+                            <div style="background: var(--dark); color: white; padding: 10px; border-radius: 6px; font-family: monospace; font-size: 0.9rem;">
+                                <span style="color: var(--success);">// JSON Formaté</span><br>
+                                {<br>
+                                &nbsp;&nbsp;"name": "CalcPro",<br>
+                                &nbsp;&nbsp;"version": "2.1",<br>
+                                &nbsp;&nbsp;"premium": true<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Hash</strong> - MD5, SHA1, SHA256 pour la sécurité des données</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>JSON</strong> - Formattage et validation de données JSON</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Base64</strong> - Encodage et décodage de données</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Regex</strong> - Testeur d'expressions régulières</li>
+                    </ul>
+                    
+                    <div class="feature-actions">
+                        <button class="demo-btn" onclick="showDeveloperTools()" aria-label="Essayer les outils développeur">Essayer</button>
+                        <button class="demo-btn secondary" aria-label="Voir la démonstration">Voir la démo</button>
+                    </div>
+                </div>
+                
+                <!-- Notes Rapides -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-sticky-note" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-title">Notes Rapides</h3>
+                    </div>
+                    <p class="feature-description">
+                        Prenez des notes, enregistrez vos calculs et exportez-les facilement. Idéal pour les professionnels et étudiants.
+                    </p>
+                    
+                    <div class="feature-preview">
+                        <div style="text-align: left; width: 100%; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <strong>Calculs du projet</strong>
+                                <span style="color: var(--text-light); font-size: 0.8rem;">Aujourd'hui</span>
+                            </div>
+                            <div style="font-size: 0.9rem; color: var(--text);">
+                                Budget: 1500€<br>
+                                Dépenses: 870€<br>
+                                Restant: <strong style="color: var(--success);">630€</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Sauvegarde auto</strong> - Vos notes sont sauvegardées automatiquement</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Export PDF</strong> - Génération de documents professionnels</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Impression</strong> - Mise en page optimisée pour l'impression</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <strong>Organisation</strong> - Créez et gérez plusieurs notes</li>
+                    </ul>
+                    
+                    <div class="feature-actions">
+                        <button class="demo-btn" onclick="showNotes()" aria-label="Essayer les notes rapides">Essayer</button>
+                        <button class="demo-btn secondary" aria-label="Voir la démonstration">Voir la démo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-content" id="mainContent">
+            <!-- Section Calculatrice -->
+            <section class="calculator-section" id="calculator">
+                <h2 class="section-title"><i class="fas fa-calculator" aria-hidden="true"></i> Calculatrice Universelle</h2>
+                
+                <div class="calculator-type-indicator" id="calcIndicator">
+                    Calculatrice Classique sélectionnée
+                </div>
+                
+                <div class="calculator-tabs">
+                    <div class="calc-tab active" data-tab="classic">Classique</div>
+                    <div class="calc-tab" data-tab="scientific">Scientifique</div>
+                    <div class="calc-tab" data-tab="programmer">Programmeur</div>
+                    <div class="calc-tab" data-tab="finance">Finance</div>
+                    <div class="calc-tab" data-tab="converter">Convertisseurs</div>
+                </div>
+
+                <!-- HISTORIQUE DÉPLACÉ ICI - CORRECTION -->
+                <div class="history-panel" id="historyPanel">
+                    <h3 class="history-title"><i class="fas fa-history" aria-hidden="true"></i> Historique</h3>
+                    <ul class="history-list" id="historyList"></ul>
+                    <button class="clear-history" onclick="clearHistory()" aria-label="Effacer l'historique">Effacer l'historique</button>
+                </div>
+
+                <!-- Mode Classique -->
+                <div class="calculator-mode active" id="classicMode">
+                    <!-- En-tête de la calculatrice classique -->
+                    <div class="calculator-header">
+                        <div class="calculator-title">
+                            <i class="fas fa-calculator" aria-hidden="true"></i>
+                            <span>Mode Classique</span>
+                        </div>
+                        <div class="header-buttons">
+                            <button class="header-btn" id="historyBtn" aria-label="Historique des calculs">
+                                <i class="fas fa-history" aria-hidden="true"></i>
+                            </button>
+                            <button class="header-btn" id="settingsBtn" aria-label="Paramètres">
+                                <i class="fas fa-cog" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Indicateur de mémoire -->
+                    <div class="memory-indicator hidden" id="memoryIndicator">
+                        <i class="fas fa-sd-card" aria-hidden="true"></i>
+                        <span>Mémoire: <span id="memoryValue">0</span></span>
+                    </div>
+
+                    <!-- Conteneur de la calculatrice classique -->
+                    <div class="calculator-container">
+                        <!-- Affichage avec aperçu de formule -->
+                        <div class="calculator-display">
+                            <div class="formula-preview" id="formulaPreview"></div>
+                            <div class="current-operand" id="currentOperand">0</div>
+                        </div>
+                        
+                        <!-- Grille de boutons 4x5 -->
+                        <div class="calculator-buttons">
+                            <!-- Ligne 1: Mémoire -->
+                            <button class="calc-btn memory" onclick="memoryClear()" aria-label="Effacer la mémoire">MC</button>
+                            <button class="calc-btn memory" onclick="memoryRecall()" aria-label="Rappeler la mémoire">MR</button>
+                            <button class="calc-btn memory" onclick="memoryAdd()" aria-label="Ajouter à la mémoire">M+</button>
+                            <button class="calc-btn memory" onclick="memorySubtract()" aria-label="Soustraire de la mémoire">M-</button>
+                            
+                            <!-- Ligne 2: Effacement -->
+                            <button class="calc-btn clear" onclick="clearAll()" aria-label="Effacer tout">C</button>
+                            <button class="calc-btn clear" onclick="clearEntry()" aria-label="Effacer l'entrée">CE</button>
+                            <button class="calc-btn function" onclick="backspace()" aria-label="Retour arrière">←</button>
+                            <button class="calc-btn operator" onclick="appendOperator('/')" aria-label="Diviser">÷</button>
+                            
+                            <!-- Ligne 3: Chiffres 7-9 -->
+                            <button class="calc-btn" onclick="appendNumber('7')" aria-label="Sept">7</button>
+                            <button class="calc-btn" onclick="appendNumber('8')" aria-label="Huit">8</button>
+                            <button class="calc-btn" onclick="appendNumber('9')" aria-label="Neuf">9</button>
+                            <button class="calc-btn operator" onclick="appendOperator('*')" aria-label="Multiplier">×</button>
+                            
+                            <!-- Ligne 4: Chiffres 4-6 -->
+                            <button class="calc-btn" onclick="appendNumber('4')" aria-label="Quatre">4</button>
+                            <button class="calc-btn" onclick="appendNumber('5')" aria-label="Cinq">5</button>
+                            <button class="calc-btn" onclick="appendNumber('6')" aria-label="Six">6</button>
+                            <button class="calc-btn operator" onclick="appendOperator('-')" aria-label="Soustraire">-</button>
+                            
+                            <!-- Ligne 5: Chiffres 1-3 -->
+                            <button class="calc-btn" onclick="appendNumber('1')" aria-label="Un">1</button>
+                            <button class="calc-btn" onclick="appendNumber('2')" aria-label="Deux">2</button>
+                            <button class="calc-btn" onclick="appendNumber('3')" aria-label="Trois">3</button>
+                            <button class="calc-btn operator" onclick="appendOperator('+')" aria-label="Additionner">+</button>
+                            
+                            <!-- Ligne 6: Ligne finale -->
+                            <button class="calc-btn function" onclick="toggleSign()" aria-label="Changer le signe">±</button>
+                            <button class="calc-btn" onclick="appendNumber('0')" aria-label="Zéro">0</button>
+                            <button class="calc-btn" onclick="appendDecimal()" aria-label="Point décimal">.</button>
+                            <button class="calc-btn equals" onclick="calculate()" aria-label="Égal">=</button>
+                            
+                            <!-- Ligne 7: Fonctions supplémentaires -->
+                            <button class="calc-btn function" onclick="calculatePercent()" aria-label="Pourcentage">%</button>
+                            <button class="calc-btn function" onclick="calculateSquareRoot()" aria-label="Racine carrée">√</button>
+                            <button class="calc-btn function" onclick="calculateReciprocal()" aria-label="Réciproque">1/x</button>
+                            <button class="calc-btn memory" onclick="memoryStore()" aria-label="Stocker en mémoire">MS</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mode Scientifique -->
+                <div class="calculator-mode" id="scientificMode">
+                    <div class="calculator-header">
+                        <div class="calculator-title">
+                            <i class="fas fa-flask" aria-hidden="true"></i>
+                            <span>Mode Scientifique</span>
+                        </div>
+                        <div class="header-buttons">
+                            <button class="header-btn" id="scientificHistoryBtn" aria-label="Historique des calculs">
+                                <i class="fas fa-history" aria-hidden="true"></i>
+                            </button>
+                            <button class="header-btn" id="scientificSettingsBtn" aria-label="Paramètres">
+                                <i class="fas fa-cog" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="calculator-container">
+                        <div class="calculator-display">
+                            <div class="formula-preview" id="scientificFormulaPreview"></div>
+                            <div class="current-operand" id="scientificCurrentOperand">0</div>
+                        </div>
+                        
+                        <div class="calculator-buttons">
+                            <!-- Première ligne -->
+                            <button class="calc-btn function" onclick="scientificFunction('sin')" aria-label="Sinus">sin</button>
+                            <button class="calc-btn function" onclick="scientificFunction('cos')" aria-label="Cosinus">cos</button>
+                            <button class="calc-btn function" onclick="scientificFunction('tan')" aria-label="Tangente">tan</button>
+                            <button class="calc-btn function" onclick="scientificFunction('log')" aria-label="Logarithme base 10">log</button>
+                            <button class="calc-btn function" onclick="scientificFunction('ln')" aria-label="Logarithme naturel">ln</button>
+                            
+                            <!-- Deuxième ligne -->
+                            <button class="calc-btn function" onclick="scientificConstant('π')" aria-label="Pi">π</button>
+                            <button class="calc-btn function" onclick="scientificConstant('e')" aria-label="Constante e">e</button>
+                            <button class="calc-btn function" onclick="scientificFunction('x²')" aria-label="Carré">x²</button>
+                            <button class="calc-btn function" onclick="scientificFunction('x³')" aria-label="Cube">x³</button>
+                            <button class="calc-btn function" onclick="scientificFunction('xʸ')" aria-label="Puissance">xʸ</button>
+                            
+                            <!-- Troisième ligne -->
+                            <button class="calc-btn function" onclick="scientificFunction('√')" aria-label="Racine carrée">√</button>
+                            <button class="calc-btn function" onclick="scientificFunction('∛')" aria-label="Racine cubique">∛</button>
+                            <button class="calc-btn function" onclick="scientificFunction('10ˣ')" aria-label="10 puissance x">10ˣ</button>
+                            <button class="calc-btn function" onclick="scientificFunction('eˣ')" aria-label="e puissance x">eˣ</button>
+                            <button class="calc-btn function" onclick="scientificFunction('(')" aria-label="Parenthèse ouvrante">(</button>
+                            
+                            <!-- Quatrième ligne -->
+                            <button class="calc-btn function" onclick="scientificFunction(')')" aria-label="Parenthèse fermante">)</button>
+                            <button class="calc-btn function" onclick="scientificFunction('!')" aria-label="Factorielle">!</button>
+                            <button class="calc-btn function" onclick="toggleAngleUnit()" id="angleUnitBtn" aria-label="Changer unité d'angle">DEG</button>
+                            <button class="calc-btn clear" onclick="scientificClearAll()" aria-label="Effacer tout">C</button>
+                            <button class="calc-btn clear" onclick="scientificClearEntry()" aria-label="Effacer l'entrée">CE</button>
+                            
+                            <!-- Cinquième ligne -->
+                            <button class="calc-btn" onclick="scientificAppendNumber('7')" aria-label="Sept">7</button>
+                            <button class="calc-btn" onclick="scientificAppendNumber('8')" aria-label="Huit">8</button>
+                            <button class="calc-btn" onclick="scientificAppendNumber('9')" aria-label="Neuf">9</button>
+                            <button class="calc-btn operator" onclick="scientificAppendOperator('/')" aria-label="Diviser">/</button>
+                            <button class="calc-btn function" onclick="scientificBackspace()" aria-label="Retour arrière">←</button>
+                            
+                            <!-- Sixième ligne -->
+                            <button class="calc-btn" onclick="scientificAppendNumber('4')" aria-label="Quatre">4</button>
+                            <button class="calc-btn" onclick="scientificAppendNumber('5')" aria-label="Cinq">5</button>
+                            <button class="calc-btn" onclick="scientificAppendNumber('6')" aria-label="Six">6</button>
+                            <button class="calc-btn operator" onclick="scientificAppendOperator('*')" aria-label="Multiplier">×</button>
+                            <button class="calc-btn function" onclick="scientificToggleSign()" aria-label="Changer signe">±</button>
+                            
+                            <!-- Septième ligne -->
+                            <button class="calc-btn" onclick="scientificAppendNumber('1')" aria-label="Un">1</button>
+                            <button class="calc-btn" onclick="scientificAppendNumber('2')" aria-label="Deux">2</button>
+                            <button class="calc-btn" onclick="scientificAppendNumber('3')" aria-label="Trois">3</button>
+                            <button class="calc-btn operator" onclick="scientificAppendOperator('-')" aria-label="Soustraire">-</button>
+                            <button class="calc-btn function" onclick="scientificFunction('%')" aria-label="Pourcentage">%</button>
+                            
+                            <!-- Huitième ligne -->
+                            <button class="calc-btn" onclick="scientificAppendNumber('0')" aria-label="Zéro">0</button>
+                            <button class="calc-btn" onclick="scientificAppendDecimal()" aria-label="Point décimal">.</button>
+                            <button class="calc-btn equals double" onclick="scientificCalculate()" aria-label="Égal">=</button>
+                            <button class="calc-btn operator" onclick="scientificAppendOperator('+')" aria-label="Additionner">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mode Programmeur -->
+                <div class="calculator-mode" id="programmerMode">
+                    <div class="calculator-header">
+                        <div class="calculator-title">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                            <span>Mode Programmeur</span>
+                        </div>
+                        <div class="header-buttons">
+                            <button class="header-btn" id="programmerHistoryBtn" aria-label="Historique des calculs">
+                                <i class="fas fa-history" aria-hidden="true"></i>
+                            </button>
+                            <button class="header-btn" id="programmerSettingsBtn" aria-label="Paramètres">
+                                <i class="fas fa-cog" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="calculator-container">
+                        <div class="calculator-display">
+                            <div class="base-display">
+                                <div>HEX: <span class="base-value" id="hexValue">0</span></div>
+                                <div>DEC: <span class="base-value" id="decValue">0</span></div>
+                                <div>OCT: <span class="base-value" id="octValue">0</span></div>
+                                <div>BIN: <span class="base-value" id="binValue">0</span></div>
+                            </div>
+                            <div class="current-operand" id="programmerCurrentOperand">0</div>
+                        </div>
+                        
+                        <div class="calculator-buttons">
+                            <!-- Première ligne - Bases -->
+                            <button class="calc-btn function" onclick="setBase('HEX')" aria-label="Base hexadécimale">HEX</button>
+                            <button class="calc-btn function" onclick="setBase('DEC')" aria-label="Base décimale">DEC</button>
+                            <button class="calc-btn function" onclick="setBase('OCT')" aria-label="Base octale">OCT</button>
+                            <button class="calc-btn function" onclick="setBase('BIN')" aria-label="Base binaire">BIN</button>
+                            <button class="calc-btn clear" onclick="programmerClearAll()" aria-label="Effacer tout">C</button>
+                            
+                            <!-- Deuxième ligne - Opérateurs logiques -->
+                            <button class="calc-btn function" onclick="programmerFunction('AND')" aria-label="ET logique">AND</button>
+                            <button class="calc-btn function" onclick="programmerFunction('OR')" aria-label="OU logique">OR</button>
+                            <button class="calc-btn function" onclick="programmerFunction('XOR')" aria-label="OU exclusif">XOR</button>
+                            <button class="calc-btn function" onclick="programmerFunction('NOT')" aria-label="NON logique">NOT</button>
+                            <button class="calc-btn clear" onclick="programmerClearEntry()" aria-label="Effacer l'entrée">CE</button>
+                            
+                            <!-- Troisième ligne - Décalages -->
+                            <button class="calc-btn function" onclick="programmerFunction('<<')" aria-label="Décalage gauche"><<</button>
+                            <button class="calc-btn function" onclick="programmerFunction('>>')" aria-label="Décalage droit">>></button>
+                            <button class="calc-btn function" onclick="programmerFunction('MOD')" aria-label="Modulo">MOD</button>
+                            <button class="calc-btn function" onclick="programmerBackspace()" aria-label="Retour arrière">←</button>
+                            <button class="calc-btn function" onclick="programmerToggleSign()" aria-label="Changer signe">±</button>
+                            
+                            <!-- Quatrième ligne - Chiffres hexadécimaux -->
+                            <button class="calc-btn function" onclick="programmerAppendNumber('A')" aria-label="A hexadécimal">A</button>
+                            <button class="calc-btn function" onclick="programmerAppendNumber('B')" aria-label="B hexadécimal">B</button>
+                            <button class="calc-btn function" onclick="programmerAppendNumber('C')" aria-label="C hexadécimal">C</button>
+                            <button class="calc-btn function" onclick="programmerAppendNumber('D')" aria-label="D hexadécimal">D</button>
+                            <button class="calc-btn function" onclick="programmerAppendNumber('E')" aria-label="E hexadécimal">E</button>
+                            
+                            <!-- Cinquième ligne - Suite chiffres hexadécimaux -->
+                            <button class="calc-btn function" onclick="programmerAppendNumber('F')" aria-label="F hexadécimal">F</button>
+                            <button class="calc-btn" onclick="programmerAppendNumber('7')" aria-label="Sept">7</button>
+                            <button class="calc-btn" onclick="programmerAppendNumber('8')" aria-label="Huit">8</button>
+                            <button class="calc-btn" onclick="programmerAppendNumber('9')" aria-label="Neuf">9</button>
+                            <button class="calc-btn operator" onclick="programmerAppendOperator('/')" aria-label="Diviser">/</button>
+                            
+                            <!-- Sixième ligne -->
+                            <button class="calc-btn" onclick="programmerAppendNumber('4')" aria-label="Quatre">4</button>
+                            <button class="calc-btn" onclick="programmerAppendNumber('5')" aria-label="Cinq">5</button>
+                            <button class="calc-btn" onclick="programmerAppendNumber('6')" aria-label="Six">6</button>
+                            <button class="calc-btn operator" onclick="programmerAppendOperator('*')" aria-label="Multiplier">×</button>
+                            <button class="calc-btn function" onclick="programmerFunction('~')" aria-label="Complément à un">~</button>
+                            
+                            <!-- Septième ligne -->
+                            <button class="calc-btn" onclick="programmerAppendNumber('1')" aria-label="Un">1</button>
+                            <button class="calc-btn" onclick="programmerAppendNumber('2')" aria-label="Deux">2</button>
+                            <button class="calc-btn" onclick="programmerAppendNumber('3')" aria-label="Trois">3</button>
+                            <button class="calc-btn operator" onclick="programmerAppendOperator('-')" aria-label="Soustraire">-</button>
+                            <button class="calc-btn function" onclick="programmerFunction('ROL')" aria-label="Rotation gauche">ROL</button>
+                            
+                            <!-- Huitième ligne -->
+                            <button class="calc-btn" onclick="programmerAppendNumber('0')" aria-label="Zéro">0</button>
+                            <button class="calc-btn equals double" onclick="programmerCalculate()" aria-label="Égal">=</button>
+                            <button class="calc-btn operator" onclick="programmerAppendOperator('+')" aria-label="Additionner">+</button>
+                            <button class="calc-btn function" onclick="programmerFunction('ROR')" aria-label="Rotation droite">ROR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mode Finance -->
+                <div class="calculator-mode" id="financeMode">
+                    <div class="calculator-header">
+                        <div class="calculator-title">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            <span>Mode Finance</span>
+                        </div>
+                        <div class="header-buttons">
+                            <button class="header-btn" id="financeHistoryBtn" aria-label="Historique des calculs">
+                                <i class="fas fa-history" aria-hidden="true"></i>
+                            </button>
+                            <button class="header-btn" id="financeSettingsBtn" aria-label="Paramètres">
+                                <i class="fas fa-cog" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="calculator-container">
+                        <div class="calculator-display">
+                            <div class="finance-display">
+                                <div class="finance-row">
+                                    <span class="finance-label">PV:</span>
+                                    <span class="finance-value" id="pvValue">0</span>
+                                </div>
+                                <div class="finance-row">
+                                    <span class="finance-label">FV:</span>
+                                    <span class="finance-value" id="fvValue">0</span>
+                                </div>
+                                <div class="finance-row">
+                                    <span class="finance-label">PMT:</span>
+                                    <span class="finance-value" id="pmtValue">0</span>
+                                </div>
+                            </div>
+                            <div class="current-operand" id="financeCurrentOperand">0</div>
+                        </div>
+                        
+                        <div class="calculator-buttons">
+                            <!-- Première ligne - Fonctions financières -->
+                            <button class="calc-btn function" onclick="financeFunction('PV')" aria-label="Valeur présente">PV</button>
+                            <button class="calc-btn function" onclick="financeFunction('FV')" aria-label="Valeur future">FV</button>
+                            <button class="calc-btn function" onclick="financeFunction('PMT')" aria-label="Paiement">PMT</button>
+                            <button class="calc-btn function" onclick="financeFunction('N')" aria-label="Nombre de périodes">N</button>
+                            <button class="calc-btn function" onclick="financeFunction('I/Y')" aria-label="Taux d'intérêt">I/Y</button>
+                            
+                            <!-- Deuxième ligne - Autres fonctions -->
+                            <button class="calc-btn function" onclick="financeFunction('IRR')" aria-label="Taux de rendement interne">IRR</button>
+                            <button class="calc-btn function" onclick="financeFunction('NPV')" aria-label="Valeur actuelle nette">NPV</button>
+                            <button class="calc-btn function" onclick="financeFunction('AMORT')" aria-label="Amortissement">AMORT</button>
+                            <button class="calc-btn function" onclick="financeFunction('%T')" aria-label="Pourcentage du total">%T</button>
+                            <button class="calc-btn function" onclick="financeFunction('Δ%')" aria-label="Variation en pourcentage">Δ%</button>
+                            
+                            <!-- Troisième ligne -->
+                            <button class="calc-btn function" onclick="financeFunction('Σ')" aria-label="Somme">Σ</button>
+                            <button class="calc-btn function" onclick="financeFunction('COST')" aria-label="Coût">COST</button>
+                            <button class="calc-btn function" onclick="financeFunction('SELL')" aria-label="Prix de vente">SELL</button>
+                            <button class="calc-btn function" onclick="financeFunction('MARGIN')" aria-label="Marge">MARGIN</button>
+                            <button class="calc-btn clear" onclick="financeClearAll()" aria-label="Effacer tout">C</button>
+                            
+                            <!-- Quatrième ligne -->
+                            <button class="calc-btn function" onclick="financeFunction('DAYS')" aria-label="Calcul de jours">DAYS</button>
+                            <button class="calc-btn function" onclick="financeFunction('DB')" aria-label="Amortissement dégressif">DB</button>
+                            <button class="calc-btn function" onclick="financeFunction('SLN')" aria-label="Amortissement linéaire">SLN</button>
+                            <button class="calc-btn function" onclick="financeFunction('SYD')" aria-label="Amortissement dégressif">SYD</button>
+                            <button class="calc-btn clear" onclick="financeClearEntry()" aria-label="Effacer l'entrée">CE</button>
+                            
+                            <!-- Cinquième ligne -->
+                            <button class="calc-btn" onclick="financeAppendNumber('7')" aria-label="Sept">7</button>
+                            <button class="calc-btn" onclick="financeAppendNumber('8')" aria-label="Huit">8</button>
+                            <button class="calc-btn" onclick="financeAppendNumber('9')" aria-label="Neuf">9</button>
+                            <button class="calc-btn operator" onclick="financeAppendOperator('/')" aria-label="Diviser">/</button>
+                            <button class="calc-btn function" onclick="financeBackspace()" aria-label="Retour arrière">←</button>
+                            
+                            <!-- Sixième ligne -->
+                            <button class="calc-btn" onclick="financeAppendNumber('4')" aria-label="Quatre">4</button>
+                            <button class="calc-btn" onclick="financeAppendNumber('5')" aria-label="Cinq">5</button>
+                            <button class="calc-btn" onclick="financeAppendNumber('6')" aria-label="Six">6</button>
+                            <button class="calc-btn operator" onclick="financeAppendOperator('*')" aria-label="Multiplier">×</button>
+                            <button class="calc-btn function" onclick="financeToggleSign()" aria-label="Changer signe">±</button>
+                            
+                            <!-- Septième ligne -->
+                            <button class="calc-btn" onclick="financeAppendNumber('1')" aria-label="Un">1</button>
+                            <button class="calc-btn" onclick="financeAppendNumber('2')" aria-label="Deux">2</button>
+                            <button class="calc-btn" onclick="financeAppendNumber('3')" aria-label="Trois">3</button>
+                            <button class="calc-btn operator" onclick="financeAppendOperator('-')" aria-label="Soustraire">-</button>
+                            <button class="calc-btn function" onclick="financeFunction('%')" aria-label="Pourcentage">%</button>
+                            
+                            <!-- Huitième ligne -->
+                            <button class="calc-btn" onclick="financeAppendNumber('0')" aria-label="Zéro">0</button>
+                            <button class="calc-btn" onclick="financeAppendDecimal()" aria-label="Point décimal">.</button>
+                            <button class="calc-btn equals double" onclick="financeCalculate()" aria-label="Égal">=</button>
+                            <button class="calc-btn operator" onclick="financeAppendOperator('+')" aria-label="Additionner">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mode Convertisseurs -->
+                <div class="calculator-mode" id="converterMode">
+                    <div class="calculator-header">
+                        <div class="calculator-title">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                            <span>Convertisseurs</span>
+                        </div>
+                    </div>
+
+                    <!-- Sous-onglets pour les différents convertisseurs -->
+                    <div class="converter-tabs">
+                        <div class="converter-tab active" data-converter="units">Unités</div>
+                        <div class="converter-tab" data-converter="currency">Devises</div>
+                        <div class="converter-tab" data-converter="developer">Outils Dev</div>
+                    </div>
+
+                    <!-- Sections de convertisseurs -->
+                    <div class="converter-section active" id="unitsConverter">
+                        <div class="tool-card">
+                            <h3 class="tool-title"><i class="fas fa-exchange-alt" aria-hidden="true"></i> Convertisseur d'Unités</h3>
+                            <div class="converter-inputs">
+                                <div class="converter-row">
+                                    <input type="number" id="unit-value" placeholder="Valeur" aria-label="Valeur à convertir">
+                                    <select id="unit-from" aria-label="Unité source">
+                                        <option value="m">Mètres</option>
+                                        <option value="km">Kilomètres</option>
+                                        <option value="ft">Pieds</option>
+                                        <option value="in">Pouces</option>
+                                        <option value="cm">Centimètres</option>
+                                    </select>
+                                </div>
+                                <div class="converter-row">
+                                    <input type="number" id="unit-result" placeholder="Résultat" readonly aria-label="Résultat de la conversion">
+                                    <select id="unit-to" aria-label="Unité cible">
+                                        <option value="m">Mètres</option>
+                                        <option value="km">Kilomètres</option>
+                                        <option value="ft">Pieds</option>
+                                        <option value="in">Pouces</option>
+                                        <option value="cm">Centimètres</option>
+                                    </select>
+                                </div>
+                                <button class="converter-btn" onclick="convertUnits()" aria-label="Convertir les unités">Convertir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="converter-section" id="currencyConverter">
+                        <div class="tool-card">
+                            <h3 class="tool-title"><i class="fas fa-coins" aria-hidden="true"></i> Convertisseur de Devises</h3>
+                            <div class="converter-inputs">
+                                <div class="converter-row">
+                                    <input type="number" id="currency-amount" placeholder="Montant" aria-label="Montant à convertir">
+                                    <select id="currency-from" aria-label="Devise source">
+                                        <option value="USD">USD ($)</option>
+                                        <option value="EUR">EUR (€)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                        <option value="JPY">JPY (¥)</option>
+                                        <option value="CAD">CAD (C$)</option>
+                                    </select>
+                                </div>
+                                <div class="converter-row">
+                                    <input type="number" id="currency-result" placeholder="Résultat" readonly aria-label="Résultat de la conversion">
+                                    <select id="currency-to" aria-label="Devise cible">
+                                        <option value="USD">USD ($)</option>
+                                        <option value="EUR">EUR (€)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                        <option value="JPY">JPY (¥)</option>
+                                        <option value="CAD">CAD (C$)</option>
+                                    </select>
+                                </div>
+                                <button class="converter-btn" onclick="convertCurrency()" aria-label="Convertir les devises">Convertir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="converter-section" id="developerConverter">
+                        <div class="tool-card">
+                            <h3 class="tool-title"><i class="fas fa-tools" aria-hidden="true"></i> Outils Développeur</h3>
+                            <div class="tools-grid">
+                                <div class="tool-item" onclick="generateHash('MD5')" aria-label="Générer hash MD5">
+                                    <i class="fas fa-fingerprint" aria-hidden="true"></i>
+                                    <span>MD5 Hash</span>
+                                </div>
+                                <div class="tool-item" onclick="generateHash('SHA1')" aria-label="Générer hash SHA1">
+                                    <i class="fas fa-hashtag" aria-hidden="true"></i>
+                                    <span>SHA1 Hash</span>
+                                </div>
+                                <div class="tool-item" onclick="formatJSON()" aria-label="Formatter JSON">
+                                    <i class="fas fa-code" aria-hidden="true"></i>
+                                    <span>JSON Formatter</span>
+                                </div>
+                                <div class="tool-item" onclick="base64Encode()" aria-label="Encoder Base64">
+                                    <i class="fas fa-key" aria-hidden="true"></i>
+                                    <span>Base64 Encode</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panneau de paramètres -->
+                <div class="settings-panel" id="settingsPanel">
+                    <h3 class="settings-title"><i class="fas fa-sliders-h" aria-hidden="true"></i> Paramètres</h3>
+                    
+                    <div class="setting-group">
+                        <label class="setting-label" for="decimalPrecision">Précision décimale</label>
+                        <select class="setting-select" id="decimalPrecision">
+                            <option value="2">2 décimales</option>
+                            <option value="4">4 décimales</option>
+                            <option value="6">6 décimales</option>
+                            <option value="8">8 décimales</option>
+                            <option value="10">10 décimales</option>
+                            <option value="12">12 décimales</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <div class="checkbox-container">
+                            <input type="checkbox" class="setting-checkbox" id="thousandsSeparator" checked>
+                            <label class="setting-label" for="thousandsSeparator">Séparateur de milliers</label>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label class="setting-label" for="themeSelector">Thème</label>
+                        <select class="setting-select" id="themeSelector">
+                            <option value="auto">Auto (selon le système)</option>
+                            <option value="light">Clair</option>
+                            <option value="dark">Sombre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Outils supplémentaires -->
+                <div class="tools-grid">
+                    <div class="tool-item" onclick="showConverter()" aria-label="Ouvrir convertisseur">
+                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        <span>Convertisseur</span>
+                    </div>
+                    <div class="tool-item" onclick="showDeveloperTools()" aria-label="Ouvrir outils développeur">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        <span>Outils Dev</span>
+                    </div>
+                    <div class="tool-item" onclick="showNotes()" aria-label="Ouvrir notes">
+                        <i class="fas fa-sticky-note" aria-hidden="true"></i>
+                        <span>Notes</span>
+                    </div>
+                    <div class="tool-item" onclick="saveCalculation()" aria-label="Sauvegarder calculs">
+                        <i class="fas fa-save" aria-hidden="true"></i>
+                        <span>Sauvegarder</span>
+                    </div>
+                    <div class="tool-item" onclick="loadCalculation()" aria-label="Charger calculs">
+                        <i class="fas fa-folder-open" aria-hidden="true"></i>
+                        <span>Charger</span>
+                    </div>
+                    <div class="tool-item" onclick="printCalculation()" aria-label="Imprimer calculs">
+                        <i class="fas fa-print" aria-hidden="true"></i>
+                        <span>Imprimer</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tools-section">
+                <!-- Les convertisseurs ont été déplacés dans l'onglet Convertisseurs -->
+                
+                <div class="tool-card">
+                    <h3 class="tool-title"><i class="fas fa-sticky-note" aria-hidden="true"></i> Notes & Calculs Rapides</h3>
+                    <textarea id="notes" placeholder="Écrivez vos notes, calculs ou idées ici..." aria-label="Zone de notes"></textarea>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="social-links">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+            <p>&copy; 2023 CalcPro. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
